@@ -22,8 +22,8 @@ jobs:
       run: |
         ls
         scp -o StrictHostKeyChecking=no -i ${{ secrets.EC2_SSH_KEY }} -r . ubuntu@54.175.234.104:/home/ubuntu/my-medusa-store
-        ssh -o StrictHostKeyChecking=no -i ${{ secrets.EC2_SSH_KEY }} ubuntu@54.175.234.104 "cd /home/ubuntu/my-medusa-store && npm install"
+        ssh -o StrictHostKeyChecking=no -i ${{ secrets.EC2_SSH_KEY }} ubuntu@54.175.234.104 "cd /home/ubuntu/my-medusa-store/my-medusa-store && npm install"
 
     - name: Start Medusa
       run: |
-        ssh -o StrictHostKeyChecking=no -i ${{ secrets.EC2_SSH_KEY }} ubuntu@54.175.234.104 "cd /home/ubuntu/my-medusa-store && npm run start"
+        ssh -o StrictHostKeyChecking=no -i ${{ secrets.EC2_SSH_KEY }} ubuntu@54.175.234.104 "cd /home/ubuntu/my-medusa-store/my-medusa-store && npm run start"
